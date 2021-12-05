@@ -101,6 +101,8 @@ alias -g brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 # Including homebrew's sbin in the PATH.
 PATH="/usr/local/sbin:$PATH"
 
+# Include homebrew's new location in MacOS 11+ in PATH.
+PATH="/opt/homebrew/bin:$PATH"
 ########################################################################
 # DUMB TERMINAL CONFIG
 ########################################################################
