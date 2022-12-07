@@ -3,7 +3,7 @@
 ########################################################################
 
 # Main prompt.
-PROMPT='%B%F{24}%1~%f%b %# '
+PROMPT='%B%F{39}%1~%f%b %# '
 
 # Set up right-hand prompt with git info.
 autoload -Uz vcs_info
@@ -11,7 +11,7 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 RPROMPT=\$vcs_info_msg_0_
-zstyle ':vcs_info:git:*' formats '%F{24}(%b)%f'
+zstyle ':vcs_info:git:*' formats '%F{39}(%b)%f'
 zstyle ':vcs_info:*' enable git
 
 ########################################################################
@@ -103,6 +103,9 @@ PATH="/usr/local/sbin:$PATH"
 
 # Include homebrew's new location in MacOS 11+ in PATH.
 PATH="/opt/homebrew/bin:$PATH"
+
+# Include homebrew's new sbin location in MacOS 13+ in PATH
+PATH="/opt/homebrew/sbin:$PATH"
 ########################################################################
 # DUMB TERMINAL CONFIG
 ########################################################################
@@ -164,3 +167,7 @@ unset __conda_setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
